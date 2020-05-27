@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "231631309596",
+    "firebase_url": "https://planet-c3978.firebaseio.com",
+    "project_id": "planet-c3978",
+    "storage_bucket": "planet-c3978.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231631309596:android:e4a767e96ca4385bd988d9",
+        "android_client_info": {
+          "package_name": "com.example.courseprojectplanetbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231631309596-k6la34b120jpsqtm9hjq1k400p3oro9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.courseprojectplanetbuilder",
+            "certificate_hash": "ec6605f989d7e8281ad94efffa0e88969e03226b"
+          }
+        },
+        {
+          "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXEza_AWKalOtPhKnI7RXMdV2tEI5Nric"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231631309596:android:27fdecd37e829f6fd988d9",
+        "android_client_info": {
+          "package_name": "com.github.prebiusta.courseprojectplanetbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXEza_AWKalOtPhKnI7RXMdV2tEI5Nric"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231631309596:android:cd7094b79b5acf8ad988d9",
+        "android_client_info": {
+          "package_name": "com.github.prebiusta.lesson9"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231631309596-ae249m4gspmu4ufos9c41cegiasn4881.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.prebiusta.lesson9",
+            "certificate_hash": "1380b141eef90399a815d866e4a6aed72d4dce50"
+          }
+        },
+        {
+          "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXEza_AWKalOtPhKnI7RXMdV2tEI5Nric"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231631309596-789avtgcknmsha3tgiff0knosf70q8lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

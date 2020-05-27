@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Game">
+        <menu>
+            <item
+                android:id="@+id/nav_current_planet"
+                android:title="Current Planet"
+                android:icon="@drawable/baseline_public_black_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/nav_all_planets"
+                android:title="All Planets"
+                android:icon="@drawable/baseline_group_work_black_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/nav_new_planet"
+                android:title="New Planet"
+                android:icon="@drawable/baseline_add_black_18dp"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+
+    <item android:title="User">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:title="Profile"
+                android:icon="@drawable/baseline_account_circle_black_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/nav_settings"
+                android:title="Settings"
+                android:icon="@drawable/baseline_settings_black_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Logout"
+                android:icon="@drawable/baseline_power_settings_new_black_18dp"
+                app:showAsAction="always" />
+
+        </menu>
+    </item>
+</menu>
