@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.ViewModel;
+package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 
@@ -22,7 +22,7 @@ public class LoginViewModelTest {
     }
 
     @Test
-    public void TestValidPassword() throws InvalidInputException {
+    public void TestValidPassword() {
         assertTrue(loginViewModel.isValidPassword("asdaasd"));
         assertTrue(loginViewModel.isValidPassword("342gzdfg"));
         assertTrue(loginViewModel.isValidPassword("0-d89k;l,vdsv"));
@@ -32,12 +32,12 @@ public class LoginViewModelTest {
     }
 
     @Test (expected = InvalidInputException.class)
-    public void TestEmptyPassword() throws InvalidInputException {
+    public void TestEmptyPassword() {
         loginViewModel.isValidPassword("");
     }
 
     @Test (expected = NullPointerException.class)
-    public void TestNullPassword() throws InvalidInputException {
+    public void TestNullPassword(){
         loginViewModel.isValidPassword(null);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.ViewModel;
+package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 
@@ -24,71 +24,71 @@ public class NewAccountViewModelTest {
     }
 
     @Test
-    public void ValidUsername() throws InvalidInputException {
+    public void ValidUsername()  {
         assertTrue(viewModel.isValidUsername("David"));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void EmptyUsername() throws InvalidInputException {
+    public void EmptyUsername()  {
         assertFalse(viewModel.isValidUsername(""));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void NoAtNoDomainEmail() throws InvalidInputException {
+    public void NoAtNoDomainEmail()  {
         assertFalse(viewModel.isValidEmail("email"));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void EmptyEmail() throws InvalidInputException {
+    public void EmptyEmail()  {
         assertFalse(viewModel.isValidEmail(""));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void NotAtEmail() throws InvalidInputException {
+    public void NotAtEmail()  {
         assertFalse(viewModel.isValidEmail("email.com"));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void NotDomainEmail() throws InvalidInputException {
+    public void NotDomainEmail()  {
         assertFalse(viewModel.isValidEmail("email@email"));
     }
 
     @Test
-    public void ValidEmail() throws InvalidInputException {
+    public void ValidEmail()  {
         assertTrue(viewModel.isValidEmail("email@email.com"));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void EmptyPasswordEmptyConfirmationPassword() throws InvalidInputException {
+    public void EmptyPasswordEmptyConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("", ""));
     }
 
     @Test(expected = InvalidInputException.class)
-    public void EmptyPasswordValidConfirmationPassword() throws InvalidInputException {
+    public void EmptyPasswordValidConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("", "123456"));
 
     }
 
     @Test(expected = InvalidInputException.class)
-    public void ValidPasswordEmptyConfirmationPassword() throws InvalidInputException {
+    public void ValidPasswordEmptyConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("123456", ""));
 
     }
 
     @Test(expected = InvalidInputException.class)
-    public void ValidPasswordDifferentConfirmationPassword() throws InvalidInputException {
+    public void ValidPasswordDifferentConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("123456", "12345"));
 
     }
 
     @Test(expected = InvalidInputException.class)
-    public void DifferentPasswordValidConfirmationPassword() throws InvalidInputException {
+    public void DifferentPasswordValidConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("12345", "123456"));
 
     }
 
     @Test
-    public void ValidPasswords() throws InvalidInputException {
+    public void ValidPasswords()  {
         assertTrue(viewModel.isValidPassword("123456", "123456"));
     }
 

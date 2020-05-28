@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.ViewModel;
+package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
 import androidx.lifecycle.ViewModel;
 
@@ -45,7 +45,7 @@ public class NewPlanetViewModel extends ViewModel {
         return text.trim().length() == 0;
     }
 
-    public void createPlanet(String planetName, String planetSize) {
-        planetRepository.createPlanet(new Planet(planetName, Integer.parseInt(planetSize)));
+    public void createPlanet(String planetName, String planetSize, String author) {
+        planetRepository.createPlanet(new Planet(planetName, Integer.parseInt(planetSize), author));
     }
 }

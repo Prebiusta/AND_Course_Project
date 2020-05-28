@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.courseprojectplanetbuilder.Fragments.LoginFragment;
+import com.example.courseprojectplanetbuilder.Fragments.View.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
 

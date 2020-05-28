@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.ViewModel;
+package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
 import androidx.lifecycle.ViewModel;
 

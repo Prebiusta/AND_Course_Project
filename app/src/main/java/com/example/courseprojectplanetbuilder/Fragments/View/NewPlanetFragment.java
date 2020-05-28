@@ -1,23 +1,28 @@
-package com.example.courseprojectplanetbuilder.Fragments;
+package com.example.courseprojectplanetbuilder.Fragments.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.courseprojectplanetbuilder.Fragments.ViewModel.NewPlanetViewModel;
 import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
-import com.example.courseprojectplanetbuilder.ViewModel.NewPlanetViewModel;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class NewPlanetFragment extends Fragment {
+    private static final String TAG = "NewPlanetFragment";
 
     private NewPlanetViewModel mViewModel;
 
@@ -57,8 +62,10 @@ public class NewPlanetFragment extends Fragment {
 
                 if (isValid){
                     errorLabel.setText("");
-                    mViewModel.createPlanet(planetName, planetSize);
+                    mViewModel.createPlanet(planetName, planetSize, FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+                    Toast.makeText(getContext(), "Planet created", Toast.LENGTH_SHORT).show();
                 }
+                hideKeyboard();
             }
         });
 
@@ -69,6 +76,11 @@ public class NewPlanetFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(NewPlanetViewModel.class);
+    }
+
+    private void hideKeyboard() {
+        InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
 }

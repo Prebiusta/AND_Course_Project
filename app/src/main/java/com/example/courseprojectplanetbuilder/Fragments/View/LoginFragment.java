@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.Fragments;
+package com.example.courseprojectplanetbuilder.Fragments.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Utility.GifImageView;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
-import com.example.courseprojectplanetbuilder.ViewModel.LoginViewModel;
+import com.example.courseprojectplanetbuilder.Fragments.ViewModel.LoginViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;

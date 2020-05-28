@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.Fragments;
+package com.example.courseprojectplanetbuilder.Fragments.View;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.courseprojectplanetbuilder.R;
-import com.example.courseprojectplanetbuilder.ViewModel.AppLayoutViewModel;
+import com.example.courseprojectplanetbuilder.Fragments.ViewModel.AppLayoutViewModel;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
