@@ -42,6 +42,10 @@ public class AllPlanetsAdapter extends RecyclerView.Adapter<AllPlanetsAdapter.Vi
         String sizeText = "Size: " + actualPlanet.getMaxSize();
         holder.planetSize.setText(sizeText);
         holder.planetAuthor.setText(actualPlanet.getAuthor());
+        if (actualPlanet.isCompleted()){
+            holder.selectButton.setText("FINISHED");
+            holder.selectButton.setEnabled(false);
+        }
     }
 
     @Override

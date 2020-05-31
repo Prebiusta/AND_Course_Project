@@ -21,6 +21,7 @@ import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.AppLayoutViewModel;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AppLayout extends Fragment {
 
@@ -30,6 +31,7 @@ public class AppLayout extends Fragment {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private AppCompatActivity activity;
+    private FirebaseUser user;
 
     public static AppLayout newInstance() {
         return new AppLayout();
@@ -39,6 +41,7 @@ public class AppLayout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         activity = (AppCompatActivity) getActivity();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         return inflater.inflate(R.layout.app_layout_fragment, container, false);
     }
 
@@ -60,7 +63,6 @@ public class AppLayout extends Fragment {
         setupDrawerContent(navDrawer);
 
         mViewModel = new ViewModelProvider(this).get(AppLayoutViewModel.class);
-        // TODO: Use the ViewModel
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -120,10 +122,10 @@ public class AppLayout extends Fragment {
 
     private void signOut(){
         FirebaseAuth.getInstance().signOut();
+        mViewModel.resetLiveData();
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_layout, LoginFragment.newInstance())
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }
-
 }

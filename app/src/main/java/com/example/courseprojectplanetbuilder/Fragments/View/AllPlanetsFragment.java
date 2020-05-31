@@ -1,6 +1,7 @@
 package com.example.courseprojectplanetbuilder.Fragments.View;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
         allPlanets.observe(getActivity(), new Observer<ArrayList<Planet>>() {
             @Override
             public void onChanged(ArrayList<Planet> planets) {
+                Log.i(TAG, "onChanged: planet list updated");
                 allPlanetsAdapter.setAllPlanets(allPlanets.getValue());
                 allPlanetsAdapter.notifyDataSetChanged();
             }

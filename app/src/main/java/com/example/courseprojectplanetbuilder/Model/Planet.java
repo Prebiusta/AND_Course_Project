@@ -6,6 +6,7 @@ public class Planet {
     private String author;
     private int maxSize;
     private int currentSize;
+    private boolean completed = false;
 
     public Planet() {
     }
@@ -18,6 +19,14 @@ public class Planet {
 
     public int getCurrentSize() {
         return currentSize;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     public void setCurrentSize(int currentSize) {

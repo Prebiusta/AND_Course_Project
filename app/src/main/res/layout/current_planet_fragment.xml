@@ -53,14 +53,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/current_planet_progress_bar" />
 
-    <Button
-        android:id="@+id/current_planet_build_button"
-        android:layout_width="183dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="16dp"
-        android:text="Build"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_planet_text_progress" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

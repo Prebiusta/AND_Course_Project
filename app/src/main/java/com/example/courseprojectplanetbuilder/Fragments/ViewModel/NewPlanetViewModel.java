@@ -1,16 +1,19 @@
 package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
-import androidx.lifecycle.ViewModel;
+import android.app.Application;
+
+import androidx.lifecycle.AndroidViewModel;
 
 import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.example.courseprojectplanetbuilder.Repository.PlanetRepository;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 
-public class NewPlanetViewModel extends ViewModel {
+public class NewPlanetViewModel extends AndroidViewModel {
     private final PlanetRepository planetRepository;
 
-    public NewPlanetViewModel() {
-        planetRepository = PlanetRepository.getInstance();
+    public NewPlanetViewModel(Application application) {
+        super(application);
+        planetRepository = PlanetRepository.getInstance(application);
     }
 
     public boolean isValidName(String name) throws InvalidInputException {

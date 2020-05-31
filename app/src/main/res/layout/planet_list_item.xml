@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_margin="5dp"
-    android:background="@drawable/star_background">
+    android:background="#fff"
+    android:elevation="8dp">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -27,7 +28,6 @@
         android:text="Planet name"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,6 @@
         android:layout_marginTop="32dp"
         android:text="Size: 1000"
         android:textStyle="italic"
-        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/planet_list_item_name" />
@@ -52,12 +51,12 @@
         android:text="Owner"
         android:textStyle="italic"
         android:textSize="12sp"
-        android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/planet_list_item_size" />
 
     <Button
+        android:elevation="4dp"
         android:id="@+id/planet_list_item_select_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
