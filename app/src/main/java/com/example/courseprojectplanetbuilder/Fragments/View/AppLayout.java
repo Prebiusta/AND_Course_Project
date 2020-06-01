@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.courseprojectplanetbuilder.DAO.PlanetRemoteDAO;
 import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.AppLayoutViewModel;
 import com.google.android.material.navigation.NavigationView;

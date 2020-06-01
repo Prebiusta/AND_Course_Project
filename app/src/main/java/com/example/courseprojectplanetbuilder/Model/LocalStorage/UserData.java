@@ -1,4 +1,4 @@
-package com.example.courseprojectplanetbuilder.Model;
+package com.example.courseprojectplanetbuilder.Model.LocalStorage;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

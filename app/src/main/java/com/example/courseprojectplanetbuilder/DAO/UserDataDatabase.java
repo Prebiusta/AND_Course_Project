@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.courseprojectplanetbuilder.Model.UserData;
-import com.example.courseprojectplanetbuilder.Model.UserFinishedPlanet;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserFinishedPlanet;
 
 @Database(entities = {UserData.class, UserFinishedPlanet.class}, version = 4)
 public abstract class UserDataDatabase extends RoomDatabase {

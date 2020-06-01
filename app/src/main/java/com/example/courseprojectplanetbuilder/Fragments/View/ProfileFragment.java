@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.ProfileViewModel;
-import com.example.courseprojectplanetbuilder.Model.UserData;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 import com.example.courseprojectplanetbuilder.R;
 
 public class ProfileFragment extends Fragment {

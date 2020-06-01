@@ -21,16 +21,21 @@ public class PlanetRemoteDAO {
     private static PlanetRemoteDAO instance;
 
     private static final DatabaseReference DATABASE_REF = FirebaseDatabase.getInstance().getReference("planets");
-    private final FirebaseReferenceLiveData liveData = new FirebaseReferenceLiveData(DATABASE_REF);
-    private final LiveData<ArrayList<Planet>> planetLiveData = Transformations.map(liveData, new Deserializer());
+    private final LiveData<ArrayList<Planet>> planetLiveData;
 
     private PlanetRemoteDAO() {
+        FirebaseReferenceLiveData liveData = new FirebaseReferenceLiveData(DATABASE_REF);
+        planetLiveData = Transformations.map(liveData, new Deserializer());
     }
 
     public static PlanetRemoteDAO getInstance() {
         if (instance == null)
             instance = new PlanetRemoteDAO();
         return instance;
+    }
+
+    public static void clearInstance() {
+        instance = null;
     }
 
     public void createPlanet(Planet newPlanet){

@@ -9,6 +9,7 @@ import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.example.courseprojectplanetbuilder.Repository.PlanetRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AllPlanetsViewModel extends AndroidViewModel {
     private final PlanetRepository planetRepository;
@@ -24,5 +25,22 @@ public class AllPlanetsViewModel extends AndroidViewModel {
 
     public void setCurrentPlanet(Planet planet){
         planetRepository.setCurrentPlanet(planet);
+    }
+
+    public ArrayList<Planet> getNotCompletedPlanets(ArrayList<Planet> planets) {
+        List<String> completedPlanetIds = planetRepository.getCompletedPlanetIdsForCurrentUser();
+        ArrayList<Planet> planetsCopy = new ArrayList<>();
+
+        for (Planet planetToCopy : planets)
+            planetsCopy.add(new Planet(planetToCopy.getId(), planetToCopy.getName(), planetToCopy.getAuthor(), planetToCopy.getMaxSize()));
+
+        for (String completedPlanetId : completedPlanetIds){
+            for (Planet remotePlanet : planetsCopy){
+                if (remotePlanet.getId().equals(completedPlanetId))
+                    remotePlanet.setCompleted(true);
+            }
+        }
+
+        return planetsCopy;
     }
 }

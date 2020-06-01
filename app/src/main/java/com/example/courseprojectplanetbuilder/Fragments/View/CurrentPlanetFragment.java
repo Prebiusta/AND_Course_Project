@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.CurrentPlanetViewModel;
 import com.example.courseprojectplanetbuilder.Model.Planet;
-import com.example.courseprojectplanetbuilder.Model.UserData;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 import com.example.courseprojectplanetbuilder.R;
 
 public class CurrentPlanetFragment extends Fragment {
@@ -62,10 +62,9 @@ public class CurrentPlanetFragment extends Fragment {
                 planetProgressBar.setProgress(planet.getCurrentSize());
                 String progressString = (planet.getCurrentSize() + " / " + planet.getMaxSize());
                 planetProgressText.setText(progressString);
-                if (planet.isCompleted()){
+                if (planet.getCurrentSize() >= planet.getMaxSize()) {
                     hideLayout();
                 }
-
             }
         });
 
@@ -96,7 +95,7 @@ public class CurrentPlanetFragment extends Fragment {
         super.onPause();
         // TODO: Implement real data to save
         // TODO: Create statistics profile to see data
-        UserData userData = new UserData("test", 1,1);
+        UserData userData = new UserData("test", 1, 1);
         mViewModel.saveUserData(userData);
     }
 }

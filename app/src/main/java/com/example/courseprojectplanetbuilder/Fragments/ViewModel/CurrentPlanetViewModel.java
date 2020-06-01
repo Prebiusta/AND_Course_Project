@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.courseprojectplanetbuilder.Model.Planet;
-import com.example.courseprojectplanetbuilder.Model.UserData;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 import com.example.courseprojectplanetbuilder.Repository.PlanetRepository;
 
 public class CurrentPlanetViewModel extends AndroidViewModel {

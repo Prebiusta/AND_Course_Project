@@ -17,6 +17,13 @@ public class Planet {
         this.author = author;
     }
 
+    public Planet(String id, String name, String author, int maxSize) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.maxSize = maxSize;
+    }
+
     public int getCurrentSize() {
         return currentSize;
     }
@@ -73,6 +80,7 @@ public class Planet {
                 ", author='" + author + '\'' +
                 ", maxSize=" + maxSize +
                 ", currentSize=" + currentSize +
+                ", completed=" + completed +
                 '}';
     }
 }

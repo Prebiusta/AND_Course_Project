@@ -62,7 +62,8 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
             @Override
             public void onChanged(ArrayList<Planet> planets) {
                 Log.i(TAG, "onChanged: planet list updated");
-                allPlanetsAdapter.setAllPlanets(planets);
+                ArrayList<Planet> notCompletedPlanets = mViewModel.getNotCompletedPlanets(planets);
+                allPlanetsAdapter.setAllPlanets(notCompletedPlanets);
                 allPlanetsAdapter.notifyDataSetChanged();
             }
         });

@@ -1,13 +1,12 @@
 package com.example.courseprojectplanetbuilder.DAO;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.courseprojectplanetbuilder.Model.UserFinishedPlanet;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserFinishedPlanet;
 
 import java.util.List;
 
@@ -23,5 +22,5 @@ public interface UserFinishedPlanetsDAO {
     void delete(UserFinishedPlanet userFinishedPlanet);
 
     @Query("SELECT * FROM user_planet WHERE userId = :userId")
-    LiveData<List<UserFinishedPlanet>> getAllFinishedPlanetsForUser(String userId);
+    List<UserFinishedPlanet> getAllFinishedPlanetsForUser(String userId);
 }

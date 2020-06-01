@@ -7,7 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.courseprojectplanetbuilder.Model.UserData;
+import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 
 @Dao
 public interface UserDataDAO {
