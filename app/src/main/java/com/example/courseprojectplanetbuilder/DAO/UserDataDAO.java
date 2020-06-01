@@ -1,5 +1,6 @@
 package com.example.courseprojectplanetbuilder.DAO;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -18,6 +19,9 @@ public interface UserDataDAO {
 
     @Delete
     void delete(UserData userData);
+
+    @Query("SELECT * FROM user_data WHERE uid = :userId")
+    LiveData<UserData> getUserLiveData(String userId);
 
     @Query("SELECT * FROM user_data WHERE uid = :userId")
     UserData getUserData(String userId);

@@ -57,12 +57,12 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
         allPlanetsAdapter = new AllPlanetsAdapter(this);
         allPlanetsRecyclerView.setAdapter(allPlanetsAdapter);
 
-        final LiveData<ArrayList<Planet>> allPlanets = mViewModel.getAllPlanetsLiveData();
+        LiveData<ArrayList<Planet>> allPlanets = mViewModel.getAllPlanetsLiveData();
         allPlanets.observe(getActivity(), new Observer<ArrayList<Planet>>() {
             @Override
             public void onChanged(ArrayList<Planet> planets) {
                 Log.i(TAG, "onChanged: planet list updated");
-                allPlanetsAdapter.setAllPlanets(allPlanets.getValue());
+                allPlanetsAdapter.setAllPlanets(planets);
                 allPlanetsAdapter.notifyDataSetChanged();
             }
         });

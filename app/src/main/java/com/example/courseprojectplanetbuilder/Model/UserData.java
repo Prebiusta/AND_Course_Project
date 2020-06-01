@@ -41,4 +41,13 @@ public class UserData {
     public void setTotalClicks(int totalClicks) {
         this.totalClicks = totalClicks;
     }
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "uid='" + uid + '\'' +
+                ", finishedPlanets=" + finishedPlanets +
+                ", totalClicks=" + totalClicks +
+                '}';
+    }
 }

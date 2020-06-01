@@ -7,12 +7,15 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.courseprojectplanetbuilder.Model.UserData;
+import com.example.courseprojectplanetbuilder.Model.UserFinishedPlanet;
 
-@Database(entities = {UserData.class}, version = 1)
+@Database(entities = {UserData.class, UserFinishedPlanet.class}, version = 4)
 public abstract class UserDataDatabase extends RoomDatabase {
 
     private static UserDataDatabase instance;
+
     public abstract UserDataDAO userDataDAO();
+    public abstract UserFinishedPlanetsDAO userFinishedPlanetsDAO();
 
     public static synchronized UserDataDatabase getInstance(Context context) {
         if(instance == null) {

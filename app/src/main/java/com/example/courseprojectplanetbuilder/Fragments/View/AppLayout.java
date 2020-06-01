@@ -31,7 +31,7 @@ public class AppLayout extends Fragment {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private AppCompatActivity activity;
-    private FirebaseUser user;
+    public static FirebaseUser user;
 
     public static AppLayout newInstance() {
         return new AppLayout();
@@ -76,7 +76,7 @@ public class AppLayout extends Fragment {
     }
 
     private void selectDrawerItem(MenuItem item) {
-        if (item.getItemId() == R.id.nav_logout){
+        if (item.getItemId() == R.id.nav_logout) {
             signOut();
             return;
         }
@@ -92,6 +92,9 @@ public class AppLayout extends Fragment {
                 break;
             case R.id.nav_new_planet:
                 fragmentClass = NewPlanetFragment.class;
+                break;
+            case R.id.nav_profile:
+                fragmentClass = ProfileFragment.class;
                 break;
             default:
                 fragmentClass = CurrentPlanetFragment.class;
@@ -120,7 +123,7 @@ public class AppLayout extends Fragment {
         drawerLayout.closeDrawers();
     }
 
-    private void signOut(){
+    private void signOut() {
         FirebaseAuth.getInstance().signOut();
         mViewModel.resetLiveData();
         getActivity().getSupportFragmentManager().beginTransaction()

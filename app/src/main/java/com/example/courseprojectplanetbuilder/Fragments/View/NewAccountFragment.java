@@ -112,6 +112,8 @@ public class NewAccountFragment extends Fragment {
 
                             user.updateProfile(profileUpdates);
 
+                            mViewModel.createUserData(user.getUid());
+
                             Log.i(TAG, "createUserWithEmail:success", task.getException());
                             updateUI(AppLayout.newInstance());
                         } else {

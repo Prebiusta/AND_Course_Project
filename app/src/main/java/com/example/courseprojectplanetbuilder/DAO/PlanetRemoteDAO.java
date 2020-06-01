@@ -45,8 +45,8 @@ public class PlanetRemoteDAO {
 
             for (DataSnapshot planet : input.getChildren()){
                 Planet newPlanet = planet.getValue(Planet.class);
-                Log.i(TAG, "Planet from firebase: " + newPlanet.toString());
                 newPlanet.setId(planet.getKey());
+                Log.i(TAG, "Planet from firebase: " + newPlanet.toString());
                 allPlanets.add(newPlanet);
             }
 

@@ -18,7 +18,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.courseprojectplanetbuilder.R;
-import com.example.courseprojectplanetbuilder.Utility.GifImageView;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.LoginViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,7 +31,6 @@ public class LoginFragment extends Fragment {
     private static final String TAG = "LoginFragment";
 
     private LoginViewModel mViewModel;
-    private View root;
     private Button loginButton;
     private Button newAccount;
     private TextInputLayout email;
@@ -48,16 +46,14 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.login_fragment, container, false);
+        View root = inflater.inflate(R.layout.login_fragment, container, false);
 
-        GifImageView gifImageView = root.findViewById(R.id.login_gif_image_view);
         email = root.findViewById(R.id.login_email_field);
         password = root.findViewById(R.id.login_password_field);
         loginButton = root.findViewById(R.id.login_login_button);
         newAccount = root.findViewById(R.id.login_new_account_button);
         errorLabel = root.findViewById(R.id.login_error);
 
-        gifImageView.setGifImageResource(R.drawable.rotating_planet);
 
         mAuth = FirebaseAuth.getInstance();
 
