@@ -2,4 +2,6 @@
     <string name="app_name">CourseProject[Planet Builder]</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="finished_planets">Finished Planets:</string>
+    <string name="total_clicks">Total clicks:</string>
 </resources>

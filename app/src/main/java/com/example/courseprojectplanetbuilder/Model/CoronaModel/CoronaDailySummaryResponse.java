@@ -3,11 +3,15 @@ package com.example.courseprojectplanetbuilder.Model.CoronaModel;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class RemoteCoronaDailySummary {
+public class CoronaDailySummaryResponse {
     public Global Global;
-    public ArrayList<Country> countries;
+    public ArrayList<Country> Countries;
 
-    private class Global {
+    public ArrayList<Country> getCountries() {
+        return Countries;
+    }
+
+    public class Global {
         public int NewConfirmed;
         public int TotalConfirmed;
         public int NewDeaths;
@@ -16,7 +20,7 @@ public class RemoteCoronaDailySummary {
         public int TotalRecovered;
     }
 
-    private class Country {
+    public class Country {
         public String Country;
         public String CountryCode;
         public String Slug;

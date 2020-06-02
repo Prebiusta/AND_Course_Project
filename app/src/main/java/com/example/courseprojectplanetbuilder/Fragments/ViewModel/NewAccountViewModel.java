@@ -9,11 +9,15 @@ import com.example.courseprojectplanetbuilder.Utility.EmailValidation;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 
 public class NewAccountViewModel extends AndroidViewModel {
-    private final PlanetRepository planetRepository;
+    private PlanetRepository planetRepository;
 
     public NewAccountViewModel(Application application) {
         super(application);
         this.planetRepository = PlanetRepository.getInstance(application);
+    }
+
+    public NewAccountViewModel() {
+        super(null);
     }
 
     public boolean isValidUsername(String username) throws InvalidInputException {

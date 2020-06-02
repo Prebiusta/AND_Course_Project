@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.courseprojectplanetbuilder.Fragments.ViewModel.CurrentPlanetViewModel;
 import com.example.courseprojectplanetbuilder.Model.Planet;
-import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 import com.example.courseprojectplanetbuilder.R;
 
 public class CurrentPlanetFragment extends Fragment {
@@ -88,14 +87,5 @@ public class CurrentPlanetFragment extends Fragment {
         planetProgressText.setVisibility(View.VISIBLE);
         planetName.setVisibility(View.VISIBLE);
         planetImage.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        // TODO: Implement real data to save
-        // TODO: Create statistics profile to see data
-        UserData userData = new UserData("test", 1, 1);
-        mViewModel.saveUserData(userData);
     }
 }

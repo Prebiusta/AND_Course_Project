@@ -27,11 +27,11 @@ public class AllPlanetsViewModel extends AndroidViewModel {
         planetRepository.setCurrentPlanet(planet);
     }
 
-    public ArrayList<Planet> getNotCompletedPlanets(ArrayList<Planet> planets) {
+    public ArrayList<Planet> getNotCompletedPlanets(ArrayList<Planet> remotePlanets) {
         List<String> completedPlanetIds = planetRepository.getCompletedPlanetIdsForCurrentUser();
         ArrayList<Planet> planetsCopy = new ArrayList<>();
 
-        for (Planet planetToCopy : planets)
+        for (Planet planetToCopy : remotePlanets)
             planetsCopy.add(new Planet(planetToCopy.getId(), planetToCopy.getName(), planetToCopy.getAuthor(), planetToCopy.getMaxSize()));
 
         for (String completedPlanetId : completedPlanetIds){

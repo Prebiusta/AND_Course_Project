@@ -2,13 +2,11 @@ package com.example.courseprojectplanetbuilder.Fragments.ViewModel;
 
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-
 
 public class NewAccountViewModelTest {
     private NewAccountViewModel viewModel;
@@ -18,10 +16,6 @@ public class NewAccountViewModelTest {
         viewModel = new NewAccountViewModel();
     }
 
-    @After
-    public void tearDown() throws Exception {
-        viewModel = null;
-    }
 
     @Test
     public void ValidUsername()  {
@@ -66,7 +60,6 @@ public class NewAccountViewModelTest {
     @Test(expected = InvalidInputException.class)
     public void EmptyPasswordValidConfirmationPassword()  {
         assertFalse(viewModel.isValidPassword("", "123456"));
-
     }
 
     @Test(expected = InvalidInputException.class)

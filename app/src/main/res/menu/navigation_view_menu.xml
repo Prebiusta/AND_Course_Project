@@ -18,6 +18,11 @@
                 android:title="New Planet"
                 android:icon="@drawable/baseline_add_black_18dp"
                 app:showAsAction="always" />
+            <item
+                android:id="@+id/nav_corona_virus"
+                android:title="Corona Virus"
+                android:icon="@drawable/toxic"
+                app:showAsAction="always" />
         </menu>
     </item>
 

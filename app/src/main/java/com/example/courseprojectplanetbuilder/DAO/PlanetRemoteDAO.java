@@ -34,10 +34,6 @@ public class PlanetRemoteDAO {
         return instance;
     }
 
-    public static void clearInstance() {
-        instance = null;
-    }
-
     public void createPlanet(Planet newPlanet){
         System.out.println(newPlanet);
         DATABASE_REF.push().setValue(newPlanet);
