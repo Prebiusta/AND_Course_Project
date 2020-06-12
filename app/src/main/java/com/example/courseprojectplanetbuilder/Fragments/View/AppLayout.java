@@ -76,11 +76,6 @@ public class AppLayout extends Fragment {
     }
 
     private void selectDrawerItem(MenuItem item) {
-        if (item.getItemId() == R.id.nav_logout) {
-            signOut();
-            return;
-        }
-
         Fragment fragment = null;
         Class fragmentClass;
         switch (item.getItemId()) {
@@ -98,6 +93,10 @@ public class AppLayout extends Fragment {
                 break;
             case R.id.nav_corona_virus:
                 fragmentClass = CoronaVirusFragment.class;
+                break;
+            case R.id.nav_logout:
+                signOut();
+                fragmentClass = LoginFragment.class;
                 break;
             default:
                 fragmentClass = CurrentPlanetFragment.class;

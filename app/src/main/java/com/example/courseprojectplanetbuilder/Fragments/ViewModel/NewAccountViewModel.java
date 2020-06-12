@@ -16,10 +16,6 @@ public class NewAccountViewModel extends AndroidViewModel {
         this.planetRepository = PlanetRepository.getInstance(application);
     }
 
-    public NewAccountViewModel() {
-        super(null);
-    }
-
     public boolean isValidUsername(String username) throws InvalidInputException {
         if (isEmpty(username)) {
             throw new InvalidInputException("Username is empty");
