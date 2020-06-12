@@ -128,9 +128,5 @@ public class AppLayout extends Fragment {
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
         mViewModel.resetLiveData();
-        getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_layout, LoginFragment.newInstance())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .commit();
     }
 }

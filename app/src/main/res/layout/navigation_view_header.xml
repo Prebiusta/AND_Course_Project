@@ -24,7 +24,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:text="Planet Builder"
+        android:text="@string/planet_builder_header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

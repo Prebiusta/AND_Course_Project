@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="Game">
+    <item android:title="@string/nav_game">
         <menu>
             <item
                 android:id="@+id/nav_current_planet"
-                android:title="Current Planet"
+                android:title="@string/nav_current_planet"
                 android:icon="@drawable/baseline_public_black_18dp"
                 app:showAsAction="always" />
             <item
                 android:id="@+id/nav_all_planets"
-                android:title="All Planets"
+                android:title="@string/nav_all_planets"
                 android:icon="@drawable/baseline_group_work_black_18dp"
                 app:showAsAction="always" />
             <item
                 android:id="@+id/nav_new_planet"
-                android:title="New Planet"
+                android:title="@string/nav_new_planet"
                 android:icon="@drawable/baseline_add_black_18dp"
                 app:showAsAction="always" />
             <item
                 android:id="@+id/nav_corona_virus"
-                android:title="Corona Virus"
+                android:title="@string/nav_corona_virus"
                 android:icon="@drawable/toxic"
                 app:showAsAction="always" />
         </menu>
     </item>
 
-    <item android:title="User">
+    <item android:title="@string/nav_user">
         <menu>
             <item
                 android:id="@+id/nav_profile"
-                android:title="Profile"
+                android:title="@string/nav_profile"
                 android:icon="@drawable/baseline_account_circle_black_18dp"
                 app:showAsAction="always" />
             <item
                 android:id="@+id/nav_settings"
-                android:title="Settings"
+                android:title="@string/nav_settings"
                 android:icon="@drawable/baseline_settings_black_18dp"
                 app:showAsAction="always" />
             <item
                 android:id="@+id/nav_logout"
-                android:title="Logout"
+                android:title="@string/nav_logout"
                 android:icon="@drawable/baseline_power_settings_new_black_18dp"
                 app:showAsAction="always" />
 

@@ -17,7 +17,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:padding="5dp"
-        android:text="TextView"
         android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="italic"
@@ -33,7 +32,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:padding="5dp"
-        android:text="TextView"
         android:textColor="#009688"
         app:layout_constraintBaseline_toBaselineOf="@+id/corona_country_new_cases"
         app:layout_constraintEnd_toStartOf="@+id/corona_country_new_cases" />
@@ -47,7 +45,6 @@
         android:layout_marginRight="8dp"
         android:background="#009688"
         android:padding="5dp"
-        android:text="TextView"
         app:layout_constraintBaseline_toBaselineOf="@+id/corona_country_total_death"
         app:layout_constraintEnd_toStartOf="@+id/corona_country_total_death" />
 
@@ -59,7 +56,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:padding="5dp"
-        android:text="TextView"
         android:textColor="#FF0000"
         app:layout_constraintBaseline_toBaselineOf="@+id/corona_country_new_deaths"
         app:layout_constraintEnd_toStartOf="@+id/corona_country_new_deaths" />
@@ -73,7 +69,6 @@
         android:layout_marginRight="8dp"
         android:background="#FF0000"
         android:padding="5dp"
-        android:text="TextView"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
