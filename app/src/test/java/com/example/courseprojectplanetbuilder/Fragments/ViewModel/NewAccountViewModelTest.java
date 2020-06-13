@@ -33,7 +33,7 @@ public class NewAccountViewModelTest {
         PowerMockito.when(PlanetRepository.getInstance(applicationMock)).thenReturn(planetRepositoryMock);
 
         MockitoAnnotations.initMocks(this);
-        viewModel = new NewAccountViewModel(applicationMock);
+        viewModel = new NewAccountViewModel(applicationMock, application1);
     }
 
     @Test

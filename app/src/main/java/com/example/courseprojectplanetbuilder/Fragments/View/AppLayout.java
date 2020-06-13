@@ -91,6 +91,9 @@ public class AppLayout extends Fragment {
             case R.id.nav_profile:
                 fragmentClass = ProfileFragment.class;
                 break;
+            case R.id.nav_settings:
+                fragmentClass = SettingsFragment.class;
+                break;
             case R.id.nav_corona_virus:
                 fragmentClass = CoronaVirusFragment.class;
                 break;

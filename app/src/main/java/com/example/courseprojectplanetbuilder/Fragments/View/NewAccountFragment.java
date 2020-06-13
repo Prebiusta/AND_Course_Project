@@ -93,11 +93,15 @@ public class NewAccountFragment extends Fragment {
     }
 
     private void hideKeyboard() {
-        InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+        try {
+            InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        } catch (Exception e) {
+
+        }
     }
 
-    private void createAccount(String email, String password){
+    private void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -124,7 +128,7 @@ public class NewAccountFragment extends Fragment {
                 });
     }
 
-    private void updateUI(Fragment fragment){
+    private void updateUI(Fragment fragment) {
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_layout, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
