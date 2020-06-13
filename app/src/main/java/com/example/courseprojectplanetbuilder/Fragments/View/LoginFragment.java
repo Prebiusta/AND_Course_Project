@@ -17,9 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.courseprojectplanetbuilder.Fragments.ViewModel.LoginViewModel;
 import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
-import com.example.courseprojectplanetbuilder.Fragments.ViewModel.LoginViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -60,23 +60,7 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isValid = false;
-
-                try {
-                    isValid = mViewModel.isValidEmail(email.getEditText().getText().toString())
-                            && mViewModel.isValidPassword(password.getEditText().getText().toString());
-                } catch (InvalidInputException e) {
-                    errorLabel.setText(e.getMessage());
-                }
-
-                if (isValid) {
-                    // Set error label to null just in case there was some error before
-                    errorLabel.setText("");
-
-                    // Create new account
-                    signInWithEmailAndPassword(email.getEditText().getText().toString(), password.getEditText().getText().toString());
-                }
-                hideKeyboard();
+                performLoginAction();
             }
         });
 
@@ -88,6 +72,26 @@ public class LoginFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void performLoginAction() {
+        boolean isValid = false;
+
+        try {
+            isValid = mViewModel.isValidEmail(email.getEditText().getText().toString())
+                    && mViewModel.isValidPassword(password.getEditText().getText().toString());
+        } catch (InvalidInputException e) {
+            errorLabel.setText(e.getMessage());
+        }
+
+        if (isValid) {
+            // Set error label to null just in case there was some error before
+            errorLabel.setText("");
+
+            // Create new account
+            signInWithEmailAndPassword(email.getEditText().getText().toString(), password.getEditText().getText().toString());
+        }
+        hideKeyboard();
     }
 
     @Override
@@ -129,9 +133,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void updateUI(FirebaseUser currentUser) {
-        if (currentUser == null){
-
-        } else {
+        if (currentUser != null){
             AppLayout appLayout = AppLayout.newInstance();
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_layout, appLayout)
