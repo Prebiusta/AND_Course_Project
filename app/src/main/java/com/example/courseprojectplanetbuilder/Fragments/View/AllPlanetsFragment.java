@@ -39,6 +39,8 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.all_planets_fragment, container, false);
+        allPlanetsRecyclerView = root.findViewById(R.id.all_planets_recycler_view);
+
         initRecyclerView();
         return root;
     }
@@ -66,7 +68,6 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
     }
 
     private void initRecyclerView() {
-        allPlanetsRecyclerView = root.findViewById(R.id.all_planets_recycler_view);
 
         allPlanetsRecyclerView.hasFixedSize();
         allPlanetsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

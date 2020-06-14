@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
@@ -36,6 +37,7 @@ public class LoginFragment extends Fragment {
     private TextInputLayout email;
     private TextInputLayout password;
     private TextView errorLabel;
+    private AppCompatActivity activity;
 
     private FirebaseAuth mAuth;
 
@@ -103,6 +105,8 @@ public class LoginFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        // Init activity
+        activity = (AppCompatActivity) getActivity();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
@@ -135,7 +139,7 @@ public class LoginFragment extends Fragment {
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser != null) {
             AppLayout appLayout = AppLayout.newInstance();
-            getActivity().getSupportFragmentManager().beginTransaction()
+            activity.getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_layout, appLayout)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit();
@@ -143,7 +147,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void replaceViewWithBackStack(Fragment fragment) {
-        getActivity().getSupportFragmentManager().beginTransaction()
+        activity.getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_layout, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .addToBackStack("tag")

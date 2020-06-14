@@ -50,50 +50,56 @@ public class NavigationViewTest {
     }
 
     @Test
-    public void openCurrentPlanetTest(){
+    public void openCurrentPlanetTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_current_planet));
 
+        Thread.sleep(1000);
         onView(withId(R.id.current_planet_fragment_layout)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openAllPlanetsTest() {
+    public void openAllPlanetsTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_all_planets));
 
+        Thread.sleep(1000);
         onView(withId(R.id.all_planets_fragment_layout)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openNewPlanetTest() {
+    public void openNewPlanetTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_new_planet));
 
+        Thread.sleep(1000);
         onView(withId(R.id.new_planet_fragment_layout)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openCoronaVirusTest() {
+    public void openCoronaVirusTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_corona_virus));
 
+        Thread.sleep(1000);
         onView(withId(R.id.corona_virus_fragment_layout)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openProfileTest() {
+    public void openProfileTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_profile));
 
+        Thread.sleep(1000);
         onView(withId(R.id.profile_fragment_layout)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openSettingsTest() {
+    public void openSettingsTest() throws InterruptedException {
         onView(withId(R.id.app_layout_navigation))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_settings));
 
+        Thread.sleep(1000);
         onView(withId(R.id.settings_fragment_layout)).check(matches(isDisplayed()));
     }
 }
