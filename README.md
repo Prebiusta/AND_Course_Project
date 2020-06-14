@@ -4,8 +4,8 @@
 
 Image of executing UI Tests
 
-![UI Tests](\pics\ui_tests.png)
+![UI Tests](/pics/ui_tests.png)
 
 Image of executing Unit Tests
 
-![Unit Tests](\pics\unit_tests.png)
+![Unit Tests](/pics/unit_tests.png)
