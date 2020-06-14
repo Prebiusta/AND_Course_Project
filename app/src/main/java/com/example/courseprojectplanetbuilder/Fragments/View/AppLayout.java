@@ -25,13 +25,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class AppLayout extends Fragment {
 
+    public static FirebaseUser user;
     private AppLayoutViewModel mViewModel;
-
     private NavigationView navDrawer;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private AppCompatActivity activity;
-    public static FirebaseUser user;
 
     public static AppLayout newInstance() {
         return new AppLayout();

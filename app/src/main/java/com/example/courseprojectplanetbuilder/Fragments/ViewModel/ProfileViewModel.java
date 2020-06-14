@@ -16,7 +16,7 @@ public class ProfileViewModel extends AndroidViewModel {
         this.planetRepository = PlanetRepository.getInstance(application);
     }
 
-    public LiveData<UserData> getCurrentUserData(){
+    public LiveData<UserData> getCurrentUserData() {
         return planetRepository.getUserData();
     }
 }

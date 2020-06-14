@@ -5,8 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
+import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.example.courseprojectplanetbuilder.Repository.PlanetRepository;
 
 public class CurrentPlanetViewModel extends AndroidViewModel {
@@ -17,7 +17,7 @@ public class CurrentPlanetViewModel extends AndroidViewModel {
         planetRepository = PlanetRepository.getInstance(application);
     }
 
-    public LiveData<Planet> getCurrentPlanet(){
+    public LiveData<Planet> getCurrentPlanet() {
         return planetRepository.getCurrentPlanet();
     }
 

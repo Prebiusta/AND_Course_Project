@@ -28,16 +28,16 @@ public class Planet {
         return currentSize;
     }
 
+    public void setCurrentSize(int currentSize) {
+        this.currentSize = currentSize;
+    }
+
     public boolean isCompleted() {
         return completed;
     }
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
-    }
-
-    public void setCurrentSize(int currentSize) {
-        this.currentSize = currentSize;
     }
 
     public String getId() {

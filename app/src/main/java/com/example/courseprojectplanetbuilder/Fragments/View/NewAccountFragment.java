@@ -16,9 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.courseprojectplanetbuilder.Fragments.ViewModel.NewAccountViewModel;
 import com.example.courseprojectplanetbuilder.R;
 import com.example.courseprojectplanetbuilder.Utility.InvalidInputException;
-import com.example.courseprojectplanetbuilder.Fragments.ViewModel.NewAccountViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -97,7 +97,7 @@ public class NewAccountFragment extends Fragment {
             InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         } catch (Exception e) {
-
+            Log.e(TAG, "hideKeyboard: error: ", e);
         }
     }
 

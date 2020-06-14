@@ -14,11 +14,8 @@ public abstract class UserDataDatabase extends RoomDatabase {
 
     private static UserDataDatabase instance;
 
-    public abstract UserDataDAO userDataDAO();
-    public abstract UserFinishedPlanetsDAO userFinishedPlanetsDAO();
-
     public static synchronized UserDataDatabase getInstance(Context context) {
-        if(instance == null) {
+        if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     UserDataDatabase.class, "user_data_database")
                     .fallbackToDestructiveMigration()
@@ -26,4 +23,8 @@ public abstract class UserDataDatabase extends RoomDatabase {
         }
         return instance;
     }
+
+    public abstract UserDataDAO userDataDAO();
+
+    public abstract UserFinishedPlanetsDAO userFinishedPlanetsDAO();
 }

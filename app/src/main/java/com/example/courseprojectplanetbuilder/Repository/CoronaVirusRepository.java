@@ -15,13 +15,13 @@ public class CoronaVirusRepository {
     }
 
     public static CoronaVirusRepository getInstance() {
-        if (instance == null){
+        if (instance == null) {
             instance = new CoronaVirusRepository();
         }
         return instance;
     }
 
-    public Call<CoronaDailySummaryResponse> requestCoronaDailyData(){
+    public Call<CoronaDailySummaryResponse> requestCoronaDailyData() {
         CoronaVirusApi coronaVirusApi = ServiceGenerator.getCoronaVirusApi();
         return coronaVirusApi.getDailyData();
     }

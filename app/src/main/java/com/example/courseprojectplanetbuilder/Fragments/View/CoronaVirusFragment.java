@@ -56,7 +56,7 @@ public class CoronaVirusFragment extends Fragment {
         mViewModel.requestCoronaDailyData().enqueue(new Callback<CoronaDailySummaryResponse>() {
             @Override
             public void onResponse(Call<CoronaDailySummaryResponse> call, Response<CoronaDailySummaryResponse> response) {
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     coronaDataAdapter.setCountryData(response.body().Countries);
                     coronaDataAdapter.notifyDataSetChanged();
                 }

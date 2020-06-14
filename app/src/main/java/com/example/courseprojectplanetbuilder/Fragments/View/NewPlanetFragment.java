@@ -2,6 +2,7 @@ package com.example.courseprojectplanetbuilder.Fragments.View;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,28 +49,32 @@ public class NewPlanetFragment extends Fragment {
         createPlanetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isValid = false;
-
-                String planetName = nameInputLayout.getEditText().getText().toString();
-                String planetSize = sizeInputLayout.getEditText().getText().toString();
-
-                try {
-                    isValid = mViewModel.isValidName(planetName)
-                            && mViewModel.isValidSize(planetSize);
-                } catch (InvalidInputException e){
-                    errorLabel.setText(e.getMessage());
-                }
-
-                if (isValid){
-                    errorLabel.setText("");
-                    mViewModel.createPlanet(planetName, planetSize, FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-                    Toast.makeText(getContext(), "Planet created", Toast.LENGTH_SHORT).show();
-                }
-                hideKeyboard();
+                createPlanetForNameAndSize();
             }
         });
 
         return root;
+    }
+
+    private void createPlanetForNameAndSize() {
+        boolean isValid = false;
+
+        String planetName = nameInputLayout.getEditText().getText().toString();
+        String planetSize = sizeInputLayout.getEditText().getText().toString();
+
+        try {
+            isValid = mViewModel.isValidName(planetName)
+                    && mViewModel.isValidSize(planetSize);
+        } catch (InvalidInputException e) {
+            errorLabel.setText(e.getMessage());
+        }
+
+        if (isValid) {
+            errorLabel.setText("");
+            mViewModel.createPlanet(planetName, planetSize, FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+            Toast.makeText(getContext(), "Planet created", Toast.LENGTH_SHORT).show();
+        }
+        hideKeyboard();
     }
 
     @Override
@@ -79,8 +84,12 @@ public class NewPlanetFragment extends Fragment {
     }
 
     private void hideKeyboard() {
-        InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+        try {
+            InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        } catch (Exception e) {
+            Log.e(TAG, "hideKeyboard: error: ", e);
+        }
     }
 
 }

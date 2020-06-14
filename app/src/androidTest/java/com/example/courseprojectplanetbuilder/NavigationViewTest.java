@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -24,16 +23,10 @@ import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
-
 public class NavigationViewTest {
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule =
             new ActivityTestRule<MainActivity>(MainActivity.class);
-
-    @BeforeClass
-    public static void setUp() {
-
-    }
 
     @Before
     public void beforeEach(){

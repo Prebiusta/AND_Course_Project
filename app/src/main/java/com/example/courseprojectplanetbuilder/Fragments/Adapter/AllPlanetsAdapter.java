@@ -15,8 +15,8 @@ import com.example.courseprojectplanetbuilder.R;
 import java.util.ArrayList;
 
 public class AllPlanetsAdapter extends RecyclerView.Adapter<AllPlanetsAdapter.ViewHolder> {
-    private ArrayList<Planet> allPlanets;
     final private OnListItemClickListener mOnListItemClickListener;
+    private ArrayList<Planet> allPlanets;
 
     public AllPlanetsAdapter(OnListItemClickListener mOnListItemClickListener) {
         this.mOnListItemClickListener = mOnListItemClickListener;
@@ -42,8 +42,8 @@ public class AllPlanetsAdapter extends RecyclerView.Adapter<AllPlanetsAdapter.Vi
         String sizeText = "Size: " + actualPlanet.getMaxSize();
         holder.planetSize.setText(sizeText);
         holder.planetAuthor.setText(actualPlanet.getAuthor());
-        if (actualPlanet.isCompleted()){
-            holder.selectButton.setText("FINISHED");
+        if (actualPlanet.isCompleted()) {
+            holder.selectButton.setText(R.string.finished_button);
             holder.selectButton.setEnabled(false);
         }
     }

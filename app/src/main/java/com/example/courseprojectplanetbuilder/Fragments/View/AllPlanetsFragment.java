@@ -1,11 +1,9 @@
 package com.example.courseprojectplanetbuilder.Fragments.View;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,9 +39,7 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.all_planets_fragment, container, false);
-
-        allPlanetsRecyclerView = root.findViewById(R.id.all_planets_recycler_view);
-
+        initRecyclerView();
         return root;
     }
 
@@ -51,17 +47,11 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(AllPlanetsViewModel.class);
-        allPlanetsRecyclerView.hasFixedSize();
-        allPlanetsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        allPlanetsAdapter = new AllPlanetsAdapter(this);
-        allPlanetsRecyclerView.setAdapter(allPlanetsAdapter);
 
         LiveData<ArrayList<Planet>> allPlanets = mViewModel.getAllPlanetsLiveData();
         allPlanets.observe(getActivity(), new Observer<ArrayList<Planet>>() {
             @Override
             public void onChanged(ArrayList<Planet> planets) {
-                Log.i(TAG, "onChanged: planet list updated");
                 ArrayList<Planet> notCompletedPlanets = mViewModel.getNotCompletedPlanets(planets);
                 allPlanetsAdapter.setAllPlanets(notCompletedPlanets);
                 allPlanetsAdapter.notifyDataSetChanged();
@@ -72,7 +62,16 @@ public class AllPlanetsFragment extends Fragment implements AllPlanetsAdapter.On
 
     @Override
     public void onButtonClicked(Planet planet) {
-        Toast.makeText(getContext(), "Planet Id: " + planet.getName(), Toast.LENGTH_SHORT).show();
         mViewModel.setCurrentPlanet(planet);
+    }
+
+    private void initRecyclerView() {
+        allPlanetsRecyclerView = root.findViewById(R.id.all_planets_recycler_view);
+
+        allPlanetsRecyclerView.hasFixedSize();
+        allPlanetsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        allPlanetsAdapter = new AllPlanetsAdapter(this);
+        allPlanetsRecyclerView.setAdapter(allPlanetsAdapter);
     }
 }

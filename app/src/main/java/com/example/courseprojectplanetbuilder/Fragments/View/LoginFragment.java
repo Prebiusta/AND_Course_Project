@@ -108,7 +108,7 @@ public class LoginFragment extends Fragment {
         updateUI(currentUser);
     }
 
-    private void signInWithEmailAndPassword(String email, String password){
+    private void signInWithEmailAndPassword(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -129,11 +129,11 @@ public class LoginFragment extends Fragment {
 
     private void hideKeyboard() {
         InputMethodManager inputManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     private void updateUI(FirebaseUser currentUser) {
-        if (currentUser != null){
+        if (currentUser != null) {
             AppLayout appLayout = AppLayout.newInstance();
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_layout, appLayout)

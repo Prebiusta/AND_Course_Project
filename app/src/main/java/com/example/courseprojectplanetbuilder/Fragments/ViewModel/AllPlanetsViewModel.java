@@ -19,11 +19,11 @@ public class AllPlanetsViewModel extends AndroidViewModel {
         this.planetRepository = PlanetRepository.getInstance(application);
     }
 
-    public LiveData<ArrayList<Planet>> getAllPlanetsLiveData(){
+    public LiveData<ArrayList<Planet>> getAllPlanetsLiveData() {
         return planetRepository.getPlanetLiveData();
     }
 
-    public void setCurrentPlanet(Planet planet){
+    public void setCurrentPlanet(Planet planet) {
         planetRepository.setCurrentPlanet(planet);
     }
 
@@ -34,8 +34,8 @@ public class AllPlanetsViewModel extends AndroidViewModel {
         for (Planet planetToCopy : remotePlanets)
             planetsCopy.add(new Planet(planetToCopy.getId(), planetToCopy.getName(), planetToCopy.getAuthor(), planetToCopy.getMaxSize()));
 
-        for (String completedPlanetId : completedPlanetIds){
-            for (Planet remotePlanet : planetsCopy){
+        for (String completedPlanetId : completedPlanetIds) {
+            for (Planet remotePlanet : planetsCopy) {
                 if (remotePlanet.getId().equals(completedPlanetId))
                     remotePlanet.setCompleted(true);
             }

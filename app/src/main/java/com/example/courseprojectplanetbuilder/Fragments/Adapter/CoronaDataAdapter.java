@@ -12,11 +12,12 @@ import com.example.courseprojectplanetbuilder.Model.CoronaModel.CoronaDailySumma
 import com.example.courseprojectplanetbuilder.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CoronaDataAdapter extends RecyclerView.Adapter<CoronaDataAdapter.ViewHolder> {
     private ArrayList<CoronaDailySummaryResponse.Country> countryData;
 
-    public CoronaDataAdapter(){
+    public CoronaDataAdapter() {
         countryData = new ArrayList<>();
     }
 
@@ -37,10 +38,10 @@ public class CoronaDataAdapter extends RecyclerView.Adapter<CoronaDataAdapter.Vi
         CoronaDailySummaryResponse.Country currentCountry = countryData.get(position);
 
         holder.countryName.setText(currentCountry.Country);
-        holder.countryNewCases.setText("+ " + currentCountry.NewConfirmed);
-        holder.countryTotalCases.setText("" + currentCountry.TotalConfirmed);
-        holder.countryNewDeaths.setText("+ " + currentCountry.NewDeaths);
-        holder.countryTotalDeaths.setText("" + currentCountry.TotalDeaths);
+        holder.countryNewCases.setText(String.format(Locale.getDefault(), "+ %d", currentCountry.NewConfirmed));
+        holder.countryTotalCases.setText(String.format(Locale.getDefault(), "%d", currentCountry.TotalConfirmed));
+        holder.countryNewDeaths.setText(String.format(Locale.getDefault(), "+ %d", currentCountry.NewDeaths));
+        holder.countryTotalDeaths.setText(String.format(Locale.getDefault(), "%d", currentCountry.TotalDeaths));
     }
 
     @Override

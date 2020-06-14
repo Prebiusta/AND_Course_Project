@@ -13,7 +13,7 @@ public class ServiceGenerator {
 
     private static CoronaVirusApi coronaVirusApi = retrofit.create(CoronaVirusApi.class);
 
-    public static CoronaVirusApi getCoronaVirusApi(){
+    public static CoronaVirusApi getCoronaVirusApi() {
         return coronaVirusApi;
     }
 }

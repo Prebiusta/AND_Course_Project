@@ -12,9 +12,9 @@ import com.example.courseprojectplanetbuilder.DAO.UserDataDAO;
 import com.example.courseprojectplanetbuilder.DAO.UserDataDatabase;
 import com.example.courseprojectplanetbuilder.DAO.UserFinishedPlanetsDAO;
 import com.example.courseprojectplanetbuilder.Fragments.View.AppLayout;
-import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserData;
 import com.example.courseprojectplanetbuilder.Model.LocalStorage.UserFinishedPlanet;
+import com.example.courseprojectplanetbuilder.Model.Planet;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -24,16 +24,13 @@ import java.util.concurrent.ExecutionException;
 
 public class PlanetRepository {
     private static final String TAG = "PlanetRepository";
-    
+    private static PlanetRepository instance;
     private final PlanetRemoteDAO planetRemoteDAO;
     private final UserDataDAO userDataDAO;
     private final UserFinishedPlanetsDAO userFinishedPlanetsDAO;
-
     private MutableLiveData<Planet> currentPlanet;
 
-    private static PlanetRepository instance;
-
-    private PlanetRepository(Application application){
+    private PlanetRepository(Application application) {
         UserDataDatabase localDatabase = UserDataDatabase.getInstance(application);
         planetRemoteDAO = PlanetRemoteDAO.getInstance();
 
@@ -49,7 +46,7 @@ public class PlanetRepository {
         return instance;
     }
 
-    public void createPlanet(Planet newPlanet){
+    public void createPlanet(Planet newPlanet) {
         planetRemoteDAO.createPlanet(newPlanet);
 
     }
@@ -58,12 +55,12 @@ public class PlanetRepository {
         return planetRemoteDAO.getPlanetLiveData();
     }
 
-    public void setCurrentPlanet(Planet planet){
-        this.currentPlanet.setValue(planet);
+    public LiveData<Planet> getCurrentPlanet() {
+        return this.currentPlanet;
     }
 
-    public LiveData<Planet> getCurrentPlanet(){
-        return this.currentPlanet;
+    public void setCurrentPlanet(Planet planet) {
+        this.currentPlanet.setValue(planet);
     }
 
     public void updateCurrentPlanetProgress(int amount) {
@@ -74,7 +71,7 @@ public class PlanetRepository {
             updatingPlanet.setCurrentSize(newSize);
         }
 
-        if (newSize == updatingPlanet.getMaxSize()){
+        if (newSize == updatingPlanet.getMaxSize()) {
             updateUserData(currentPlanet.getValue().getMaxSize());
             insertFinishedPlanetForUser();
         }
@@ -212,7 +209,7 @@ public class PlanetRepository {
         }
 
         @Override
-        protected  List<UserFinishedPlanet> doInBackground(Void... Void) {
+        protected List<UserFinishedPlanet> doInBackground(Void... Void) {
             return userFinishedPlanetsDAO.getAllFinishedPlanetsForUser(userId);
         }
     }

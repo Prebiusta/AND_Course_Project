@@ -14,7 +14,7 @@ public class CoronaVirusViewModel extends ViewModel {
         this.coronaVirusRepository = CoronaVirusRepository.getInstance();
     }
 
-    public Call<CoronaDailySummaryResponse> requestCoronaDailyData(){
+    public Call<CoronaDailySummaryResponse> requestCoronaDailyData() {
         return coronaVirusRepository.requestCoronaDailyData();
     }
 }
